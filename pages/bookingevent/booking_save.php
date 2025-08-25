@@ -58,10 +58,22 @@ $bookings = $conn->query($sql);
                   <td><?php echo htmlspecialchars($row['contact_number']); ?></td>
                   <td><?php echo htmlspecialchars($row['address']); ?></td>
                   <td>
-                    <a href="view_booking.php?delete=<?php echo $row['id']; ?>" 
+                    <!-- <a href="view_booking.php?delete=<?php echo $row['id']; ?>" 
                        onclick="return confirm('Are you sure to delete this booking?')" 
                        class="btn btn-sm btn-danger">Delete</a>
                   </td>
+                  <td> -->
+   <a href="edit_booking.php?id=<?php echo $row['id']; ?>" 
+      class="btn btn-primary btn-sm">
+      Edit
+   </a>
+   <a href="delete_booking.php?id=<?php echo $row['id']; ?>" 
+      class="btn btn-danger btn-sm"
+      onclick="return confirm('Are you sure you want to delete this booking?');">
+      Delete
+   </a>
+</td>
+
                 </tr>
               <?php endwhile; ?>
             <?php else: ?>
